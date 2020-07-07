@@ -1,0 +1,11 @@
+type Parent @model {
+  id: ID!
+  name: String!
+  children: [Child] @connection(name: "ParentChild")
+}
+
+type Child @model {
+  id: ID!
+  name: String!
+  parent: Parent! @connection(name: "ParentChild")
+}
